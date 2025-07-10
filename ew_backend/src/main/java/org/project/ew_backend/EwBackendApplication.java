@@ -8,6 +8,7 @@ public class EwBackendApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(EwBackendApplication.class, args);
+        System.out.println("Hello World!");
     }
 
 }
