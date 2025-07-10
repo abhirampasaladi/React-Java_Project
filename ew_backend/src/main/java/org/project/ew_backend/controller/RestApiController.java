@@ -10,8 +10,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 public class RestApiController {
 
     @PostMapping("/login")
-    public void login(@RequestBody AuthRequestHolder authRequestHolder) {
+    public String login(@RequestBody AuthRequestHolder authRequestHolder) {
         String username = authRequestHolder.getUsername();
         String password = authRequestHolder.getPassword();
+        return "redirect:/login?username=" + username + "&password=" + password;
     }
 }

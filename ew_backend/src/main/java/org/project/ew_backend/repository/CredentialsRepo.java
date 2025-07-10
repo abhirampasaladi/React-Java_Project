@@ -2,25 +2,19 @@ package org.project.ew_backend.repository;
 
 import org.springframework.stereotype.Repository;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 @Repository
 public class CredentialsRepo {
-    private static Map<String, String> credentialsMap = new HashMap<String, String>();
+    private static final Map<String, List<String>> credentialsMap = new HashMap<>();
 
     CredentialsRepo() {
-        credentialsMap.put("admin", "admin");
-        credentialsMap.put("user", "user");
-        credentialsMap.put("pass", "pass");
-        credentialsMap.put("admin2", "admin2");
+        credentialsMap.put("admin",Arrays.asList("admin","admin@mail.com","+1 1234567890"));
+        credentialsMap.put("user",Arrays.asList("user","user@mail.com","+1 1245789630"));
+        credentialsMap.put("pass",Arrays.asList("pass","pass@mail.com","+91 1203659874"));
     }
 
-    public void addCredentials(String username, String password) {
-        credentialsMap.put(username, password);
-    }
-
-    public String getCredentials(String username) {
+    public List<String> getCredentials(String username) {
         return credentialsMap.get(username);
     }
 }
