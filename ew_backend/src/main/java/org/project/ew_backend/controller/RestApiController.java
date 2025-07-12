@@ -40,5 +40,5 @@ public class RestApiController {
     }
 
     @GetMapping("/test")
-    public String test() {return "test";}
+    public String test() {return "test added";}
 }
